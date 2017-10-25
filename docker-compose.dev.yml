@@ -1,0 +1,15 @@
+version: "3"
+services:
+  api:
+    build:
+      context: api
+      args:
+        NODE_ENV: development
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/usr/src/app
+    command: npm run-script start-dev
